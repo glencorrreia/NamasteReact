@@ -1,3 +1,5 @@
+import React from 'react';
+import ReactDOM from 'react-dom';
 /*
     <div id="parent">
         <div id="child1">
@@ -12,6 +14,7 @@
 
     ReactElement(Object) => HTML(Browser Understands)
 */
+
 
 const parent = React.createElement("div", 
     {id: "parent"},[ 
@@ -35,7 +38,7 @@ const parent = React.createElement("div",
 //     "Hello World from React!"
 //     );
 // console.log(heading); //object
- console.log(parent); //object
+console.log(parent); //object
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 
