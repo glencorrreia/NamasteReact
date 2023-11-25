@@ -1,45 +1,25 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
-/*
-    <div id="parent">
-        <div id="child1">
-            <h1>I'm h1 tag</h1>
-            <h2>I'm h2 tag</h2>
-        </div>
-        <div id="child2">
-            <h1>I'm h1 tag</h1>
-            <h2>I'm h2 tag</h2>
-        </div>
+import ReactDOM from 'react-dom/client';
+// JSX (transpiled before it reaches the JS) - Parcel - Babel
+  
+// JSX => Babel transpiles it to React.createElement => ReactElement- JS Object => HTMLElement(render)
+
+//JSX - HTML - like or XML- like syntax
+// const jsxHeading = <h1 id="heading"> Namaste React using JSX</h1>;
+// console.log(jsxHeading); //object
+
+//React Component
+const Title = () => (
+    <h1 className='head' tabIndex='5'> Namaste React usign JSX</h1>
+);
+
+// React Functional Component
+const HeadingComponent = () => (
+    <div id='container'>
+        <Title />
+        {Title()}
+        <h1 className='heading'> Namaste React Functional Component</h1>
     </div>
-
-    ReactElement(Object) => HTML(Browser Understands)
-*/
-
-
-const parent = React.createElement("div", 
-    {id: "parent"},[ 
-    React.createElement("div", {id: "child"} , [
-    React.createElement("h1", {}, "I'm h1 tag"),
-    React.createElement("h2", {}, "I'm h2 tag"),
-    ]),
-    React.createElement("div", {id:"child2"} , [
-    React.createElement("h1", {}, "I'm h1 tag"),
-    React.createElement("h2", {}, "I'm h2 tag"),
-    ]),
-    
-]);
-
-//JSX
-
-// const heading = React.createElement(
-//     "h1", 
-//     {id:"heading", 
-//     xyz: "abc"}, 
-//     "Hello World from React!"
-//     );
-// console.log(heading); //object
-console.log(parent); //object
-
+);
 const root = ReactDOM.createRoot(document.getElementById("root"));
-
-root.render(parent); 
+root.render(<HeadingComponent />); 
